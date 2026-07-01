@@ -1,0 +1,139 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    overflow:hidden;
+    background:linear-gradient(180deg,#ffd6ea,#ffb6d9,#ff9fcf);
+    height:100vh;
+}
+
+.container{
+    position:absolute;
+    inset:0;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-direction:column;
+}
+
+.title{
+    font-size:48px;
+    color:#fff;
+    text-shadow:0 0 25px hotpink;
+    margin-bottom:10px;
+}
+
+.subtitle{
+    color:white;
+    opacity:.9;
+    margin-bottom:40px;
+}
+
+.cake-area{
+    position:relative;
+    width:340px;
+    height:340px;
+}
+
+.cake{
+    width:100%;
+    filter:drop-shadow(0 0 40px rgba(255,0,120,.5));
+    animation:float 3s ease-in-out infinite;
+}
+
+.knife{
+    position:absolute;
+    width:180px;
+    top:-50px;
+    left:-150px;
+    cursor:grab;
+    transition:.2s;
+    user-select:none;
+}
+
+.bg-hearts{
+    position:fixed;
+    inset:0;
+    overflow:hidden;
+    pointer-events:none;
+}
+
+.heart{
+    position:absolute;
+    color:#fff;
+    animation:fall linear infinite;
+}
+
+#nextPage{
+    display:none;
+    position:absolute;
+    inset:0;
+    background:linear-gradient(180deg,#ffbfdc,#ffcbe5);
+    text-align:center;
+    overflow:auto;
+    padding:40px;
+}
+
+#nextPage h2{
+    color:white;
+    font-size:42px;
+    margin-bottom:30px;
+}
+
+.gallery{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:20px;
+    max-width:700px;
+    margin:auto;
+}
+
+.gallery img{
+    width:100%;
+    border-radius:25px;
+    box-shadow:0 0 25px rgba(255,255,255,.6);
+}
+
+.message{
+    margin:40px auto;
+    max-width:650px;
+    color:white;
+    font-size:22px;
+    line-height:1.8;
+}
+
+.confetti{
+    position:fixed;
+    width:10px;
+    height:10px;
+    animation:confetti 3s linear forwards;
+}
+
+@keyframes float{
+    0%,100%{transform:translateY(0);}
+    50%{transform:translateY(-15px);}
+}
+
+@keyframes fall{
+    from{
+        transform:translateY(-100px);
+    }
+    to{
+        transform:translateY(110vh);
+    }
+}
+
+@keyframes confetti{
+    from{
+        transform:translateY(-20px) rotate(0deg);
+        opacity:1;
+    }
+    to{
+        transform:translateY(100vh) rotate(720deg);
+        opacity:0;
+    }
+}
